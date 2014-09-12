@@ -1,2 +1,2 @@
-#Bikestrming X
+#Bikestorming X
 powered by Telescope & Meteor
