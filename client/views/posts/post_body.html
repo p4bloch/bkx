@@ -1,0 +1,10 @@
+<template name="post_body">
+  <div class="post-body markdown">
+  	{{#markdown}}{{body}}{{/markdown}}
+	<p style="color:rgba(255, 255, 255, 0.5);text-align:right;">{{city}}, {{country}}</p>
+  </div>
+  <div class="post-tags">
+  	Tags:
+	{{tags}}
+  </div>
+</template>

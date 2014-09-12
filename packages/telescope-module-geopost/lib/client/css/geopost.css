@@ -1,0 +1,26 @@
+.geopost{
+	float: right;
+	background: rgba(51, 255, 51, 0.5);
+	padding: 0 7px;
+	margin-top: 3px;
+	color: #fff !important;
+	font-size: 13px;
+	transition: background-color 0.3s;
+}
+.country{
+	clear: both;
+	font-size: 12px;
+	background: rgba(137, 64, 255, 0.5);
+}
+.country:hover{
+	background: rgba(137, 64, 255, 0.8);
+}
+.city:hover{
+	background: rgba(51, 255, 51, 0.8);
+}
+
+@media screen and (max-width: 30em) {
+	.geopost{
+		font-size: 10px;
+	}
+}

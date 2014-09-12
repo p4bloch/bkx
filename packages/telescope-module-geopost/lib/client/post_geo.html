@@ -1,0 +1,10 @@
+<template name="postGeo">
+  <div class="{{moduleClass}}">
+      {{#if city}}
+        <a class="geopost city" href="/city/{{city_slug}}">{{city}}</a>
+      {{/if}}
+      {{#if country}}
+        <a class="geopost country" href="/country/{{country_slug}}">{{country}}</a>
+      {{/if}}
+  </div>
+</template>

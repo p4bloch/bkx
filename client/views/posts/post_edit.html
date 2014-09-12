@@ -1,0 +1,380 @@
+<template name="post_edit">
+  <div class="grid submit">
+    {{#with post}}
+      <form class="grid-block form-horizontal">
+        <div class="control-group">
+          <label class="control-label post-form-headline">{{i18n "Created"}}</label>
+          <div class="controls"><p>{{created}}</p></div>
+        </div>
+        <div class="control-group">
+          <label class="control-label post-form-headline">{{i18n "Title"}}</label>
+          <div class="controls"><input id="title" type="text" value="{{title}}" /></div>
+        </div>
+        <div class="control-group">
+          <label class="control-label post-form-url">{{i18n "URL"}}</label>
+          <div class="controls"><input id="url" type="text" value="{{url}}" /></div>
+        </div>
+        {{#if shorten}}
+        <div class="control-group">
+          <label class="control-label post-form-url">{{i18n "Short URL"}}</label>
+          <div class="controls"><input id="short-url" type="text" value="{{shortUrl}}" /></div>
+        </div>
+        {{/if}}
+        <div class="control-group">
+          <label class="control-label post-form-country">{{i18n "Country"}}</label>
+          <div class="controls">
+            <select id="country">
+            <option {{geo_is_selected country "Ascension Island"}} value="Ascension Island">Ascension Island</option>
+            <option {{geo_is_selected country "Andorra"}} value="Andorra">Andorra</option>
+            <option {{geo_is_selected country "United Arab Emirates"}} value="United Arab Emirates">United Arab Emirates</option>
+            <option {{geo_is_selected country "Afghanistan"}} value="Afghanistan">Afghanistan</option>
+            <option {{geo_is_selected country "Antigua and Barbuda"}} value="Antigua and Barbuda">Antigua and Barbuda</option>
+            <option {{geo_is_selected country "Anguilla"}} value="Anguilla">Anguilla</option>
+            <option {{geo_is_selected country "Albania"}} value="Albania">Albania</option>
+            <option {{geo_is_selected country "Armenia"}} value="Armenia">Armenia</option>
+            <option {{geo_is_selected country "Netherlands Antilles"}} value="Netherlands Antilles">Netherlands Antilles</option>
+            <option {{geo_is_selected country "Angola"}} value="Angola">Angola</option>
+            <option {{geo_is_selected country "Antarctica"}} value="Antarctica">Antarctica</option>
+            <option {{geo_is_selected country "Argentina"}} value="Argentina">Argentina</option>
+            <option {{geo_is_selected country "American Samoa"}} value="American Samoa">American Samoa</option>
+            <option {{geo_is_selected country "Austria"}} value="Austria">Austria</option>
+            <option {{geo_is_selected country "Australia"}} value="Australia">Australia</option>
+            <option {{geo_is_selected country "Aruba"}} value="Aruba">Aruba</option>
+            <option {{geo_is_selected country "Åland Islands"}} value="Åland Islands">Åland Islands</option>
+            <option {{geo_is_selected country "Azerbaijan"}} value="Azerbaijan">Azerbaijan</option>
+            <option {{geo_is_selected country "Bosnia and Herzegovina"}} value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+            <option {{geo_is_selected country "Barbados"}} value="Barbados">Barbados</option>
+            <option {{geo_is_selected country "Bangladesh"}} value="Bangladesh">Bangladesh</option>
+            <option {{geo_is_selected country "Belgium"}} value="Belgium">Belgium</option>
+            <option {{geo_is_selected country "Burkina Faso"}} value="Burkina Faso">Burkina Faso</option>
+            <option {{geo_is_selected country "Bulgaria"}} value="Bulgaria">Bulgaria</option>
+            <option {{geo_is_selected country "Bahrain"}} value="Bahrain">Bahrain</option>
+            <option {{geo_is_selected country "Burundi"}} value="Burundi">Burundi</option>
+            <option {{geo_is_selected country "Benin"}} value="Benin">Benin</option>
+            <option {{geo_is_selected country "Saint Barthélemy"}} value="Saint Barthélemy">Saint Barthélemy</option>
+            <option {{geo_is_selected country "Bermuda"}} value="Bermuda">Bermuda</option>
+            <option {{geo_is_selected country "Brunei"}} value="Brunei">Brunei</option>
+            <option {{geo_is_selected country "Bolivia"}} value="Bolivia">Bolivia</option>
+            <option {{geo_is_selected country "British Antarctic Territory"}} value="British Antarctic Territory">British Antarctic Territory</option>
+            <option {{geo_is_selected country "Brazil"}} value="Brazil">Brazil</option>
+            <option {{geo_is_selected country "Bahamas"}} value="Bahamas">Bahamas</option>
+            <option {{geo_is_selected country "Bhutan"}} value="Bhutan">Bhutan</option>
+            <option {{geo_is_selected country "Bouvet Island"}} value="Bouvet Island">Bouvet Island</option>
+            <option {{geo_is_selected country "Botswana"}} value="Botswana">Botswana</option>
+            <option {{geo_is_selected country "Belarus"}} value="Belarus">Belarus</option>
+            <option {{geo_is_selected country "Belize"}} value="Belize">Belize</option>
+            <option {{geo_is_selected country "Canada"}} value="Canada">Canada</option>
+            <option {{geo_is_selected country "Cocos [Keeling] Islands"}} value="Cocos [Keeling] Islands">Cocos [Keeling] Islands</option>
+            <option {{geo_is_selected country "Congo - Kinshasa"}} value="Congo - Kinshasa">Congo - Kinshasa</option>
+            <option {{geo_is_selected country "Central African Republic"}} value="Central African Republic">Central African Republic</option>
+            <option {{geo_is_selected country "Congo - Brazzaville"}} value="Congo - Brazzaville">Congo - Brazzaville</option>
+            <option {{geo_is_selected country "Switzerland"}} value="Switzerland">Switzerland</option>
+            <option {{geo_is_selected country "Côte d’Ivoire"}} value="Côte d’Ivoire">Côte d’Ivoire</option>
+            <option {{geo_is_selected country "Cook Islands"}} value="Cook Islands">Cook Islands</option>
+            <option {{geo_is_selected country "Chile"}} value="Chile">Chile</option>
+            <option {{geo_is_selected country "Cameroon"}} value="Cameroon">Cameroon</option>
+            <option {{geo_is_selected country "China"}} value="China">China</option>
+            <option {{geo_is_selected country "Colombia"}} value="Colombia">Colombia</option>
+            <option {{geo_is_selected country "Clipperton Island"}} value="Clipperton Island">Clipperton Island</option>
+            <option {{geo_is_selected country "Costa Rica"}} value="Costa Rica">Costa Rica</option>
+            <option {{geo_is_selected country "Serbia and Montenegro"}} value="Serbia and Montenegro">Serbia and Montenegro</option>
+            <option {{geo_is_selected country "Canton and Enderbury Islands"}} value="Canton and Enderbury Islands">Canton and Enderbury Islands</option>
+            <option {{geo_is_selected country "Cuba"}} value="Cuba">Cuba</option>
+            <option {{geo_is_selected country "Cape Verde"}} value="Cape Verde">Cape Verde</option>
+            <option {{geo_is_selected country "Christmas Island"}} value="Christmas Island">Christmas Island</option>
+            <option {{geo_is_selected country "Cyprus"}} value="Cyprus">Cyprus</option>
+            <option {{geo_is_selected country "Czech Republic"}} value="Czech Republic">Czech Republic</option>
+            <option {{geo_is_selected country "East Germany"}} value="East Germany">East Germany</option>
+            <option {{geo_is_selected country "Germany"}} value="Germany">Germany</option>
+            <option {{geo_is_selected country "Diego Garcia"}} value="Diego Garcia">Diego Garcia</option>
+            <option {{geo_is_selected country "Djibouti"}} value="Djibouti">Djibouti</option>
+            <option {{geo_is_selected country "Denmark"}} value="Denmark">Denmark</option>
+            <option {{geo_is_selected country "Dominica"}} value="Dominica">Dominica</option>
+            <option {{geo_is_selected country "Dominican Republic"}} value="Dominican Republic">Dominican Republic</option>
+            <option {{geo_is_selected country "Algeria"}} value="Algeria">Algeria</option>
+            <option {{geo_is_selected country "Ceuta and Melilla"}} value="Ceuta and Melilla">Ceuta and Melilla</option>
+            <option {{geo_is_selected country "Ecuador"}} value="Ecuador">Ecuador</option>
+            <option {{geo_is_selected country "Estonia"}} value="Estonia">Estonia</option>
+            <option {{geo_is_selected country "Egypt"}} value="Egypt">Egypt</option>
+            <option {{geo_is_selected country "Western Sahara"}} value="Western Sahara">Western Sahara</option>
+            <option {{geo_is_selected country "Eritrea"}} value="Eritrea">Eritrea</option>
+            <option {{geo_is_selected country "Spain"}} value="Spain">Spain</option>
+            <option {{geo_is_selected country "Ethiopia"}} value="Ethiopia">Ethiopia</option>
+            <option {{geo_is_selected country "European Union"}} value="European Union">European Union</option>
+            <option {{geo_is_selected country "Finland"}} value="Finland">Finland</option>
+            <option {{geo_is_selected country "Fiji"}} value="Fiji">Fiji</option>
+            <option {{geo_is_selected country "Falkland Islands"}} value="Falkland Islands">Falkland Islands</option>
+            <option {{geo_is_selected country "Micronesia"}} value="Micronesia">Micronesia</option>
+            <option {{geo_is_selected country "Faroe Islands"}} value="Faroe Islands">Faroe Islands</option>
+            <option {{geo_is_selected country "French Southern and Antarctic Territories"}} value="French Southern and Antarctic Territories">French Southern and Antarctic Territories</option>
+            <option {{geo_is_selected country "France"}} value="France">France</option>
+            <option {{geo_is_selected country "Metropolitan France"}} value="Metropolitan France">Metropolitan France</option>
+            <option {{geo_is_selected country "Gabon"}} value="Gabon">Gabon</option>
+            <option {{geo_is_selected country "United Kingdom"}} value="United Kingdom">United Kingdom</option>
+            <option {{geo_is_selected country "Grenada"}} value="Grenada">Grenada</option>
+            <option {{geo_is_selected country "Georgia"}} value="Georgia">Georgia</option>
+            <option {{geo_is_selected country "French Guiana"}} value="French Guiana">French Guiana</option>
+            <option {{geo_is_selected country "Guernsey"}} value="Guernsey">Guernsey</option>
+            <option {{geo_is_selected country "Ghana"}} value="Ghana">Ghana</option>
+            <option {{geo_is_selected country "Gibraltar"}} value="Gibraltar">Gibraltar</option>
+            <option {{geo_is_selected country "Greenland"}} value="Greenland">Greenland</option>
+            <option {{geo_is_selected country "Gambia"}} value="Gambia">Gambia</option>
+            <option {{geo_is_selected country "Guinea"}} value="Guinea">Guinea</option>
+            <option {{geo_is_selected country "Guadeloupe"}} value="Guadeloupe">Guadeloupe</option>
+            <option {{geo_is_selected country "Equatorial Guinea"}} value="Equatorial Guinea">Equatorial Guinea</option>
+            <option {{geo_is_selected country "Greece"}} value="Greece">Greece</option>
+            <option {{geo_is_selected country "South Georgia and the South Sandwich Islands"}} value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+            <option {{geo_is_selected country "Guatemala"}} value="Guatemala">Guatemala</option>
+            <option {{geo_is_selected country "Guam"}} value="Guam">Guam</option>
+            <option {{geo_is_selected country "Guinea-Bissau"}} value="Guinea-Bissau">Guinea-Bissau</option>
+            <option {{geo_is_selected country "Guyana"}} value="Guyana">Guyana</option>
+            <option {{geo_is_selected country "Hong Kong SAR China"}} value="Hong Kong SAR China">Hong Kong SAR China</option>
+            <option {{geo_is_selected country "Heard Island and McDonald Islands"}} value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+            <option {{geo_is_selected country "Honduras"}} value="Honduras">Honduras</option>
+            <option {{geo_is_selected country "Croatia"}} value="Croatia">Croatia</option>
+            <option {{geo_is_selected country "Haiti"}} value="Haiti">Haiti</option>
+            <option {{geo_is_selected country "Hungary"}} value="Hungary">Hungary</option>
+            <option {{geo_is_selected country "Canary Islands"}} value="Canary Islands">Canary Islands</option>
+            <option {{geo_is_selected country "Indonesia"}} value="Indonesia">Indonesia</option>
+            <option {{geo_is_selected country "Ireland"}} value="Ireland">Ireland</option>
+            <option {{geo_is_selected country "Israel"}} value="Israel">Israel</option>
+            <option {{geo_is_selected country "Isle of Man"}} value="Isle of Man">Isle of Man</option>
+            <option {{geo_is_selected country "India"}} value="India">India</option>
+            <option {{geo_is_selected country "British Indian Ocean Territory"}} value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+            <option {{geo_is_selected country "Iraq"}} value="Iraq">Iraq</option>
+            <option {{geo_is_selected country "Iran"}} value="Iran">Iran</option>
+            <option {{geo_is_selected country "Iceland"}} value="Iceland">Iceland</option>
+            <option {{geo_is_selected country "Italy"}} value="Italy">Italy</option>
+            <option {{geo_is_selected country "Jersey"}} value="Jersey">Jersey</option>
+            <option {{geo_is_selected country "Jamaica"}} value="Jamaica">Jamaica</option>
+            <option {{geo_is_selected country "Jordan"}} value="Jordan">Jordan</option>
+            <option {{geo_is_selected country "Japan"}} value="Japan">Japan</option>
+            <option {{geo_is_selected country "Johnston Island"}} value="Johnston Island">Johnston Island</option>
+            <option {{geo_is_selected country "Kenya"}} value="Kenya">Kenya</option>
+            <option {{geo_is_selected country "Kyrgyzstan"}} value="Kyrgyzstan">Kyrgyzstan</option>
+            <option {{geo_is_selected country "Cambodia"}} value="Cambodia">Cambodia</option>
+            <option {{geo_is_selected country "Kiribati"}} value="Kiribati">Kiribati</option>
+            <option {{geo_is_selected country "Comoros"}} value="Comoros">Comoros</option>
+            <option {{geo_is_selected country "Saint Kitts and Nevis"}} value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+            <option {{geo_is_selected country "North Korea"}} value="North Korea">North Korea</option>
+            <option {{geo_is_selected country "South Korea"}} value="South Korea">South Korea</option>
+            <option {{geo_is_selected country "Kuwait"}} value="Kuwait">Kuwait</option>
+            <option {{geo_is_selected country "Cayman Islands"}} value="Cayman Islands">Cayman Islands</option>
+            <option {{geo_is_selected country "Kazakhstan"}} value="Kazakhstan">Kazakhstan</option>
+            <option {{geo_is_selected country "Laos"}} value="Laos">Laos</option>
+            <option {{geo_is_selected country "Lebanon"}} value="Lebanon">Lebanon</option>
+            <option {{geo_is_selected country "Saint Lucia"}} value="Saint Lucia">Saint Lucia</option>
+            <option {{geo_is_selected country "Liechtenstein"}} value="Liechtenstein">Liechtenstein</option>
+            <option {{geo_is_selected country "Sri Lanka"}} value="Sri Lanka">Sri Lanka</option>
+            <option {{geo_is_selected country "Liberia"}} value="Liberia">Liberia</option>
+            <option {{geo_is_selected country "Lesotho"}} value="Lesotho">Lesotho</option>
+            <option {{geo_is_selected country "Lithuania"}} value="Lithuania">Lithuania</option>
+            <option {{geo_is_selected country "Luxembourg"}} value="Luxembourg">Luxembourg</option>
+            <option {{geo_is_selected country "Latvia"}} value="Latvia">Latvia</option>
+            <option {{geo_is_selected country "Libya"}} value="Libya">Libya</option>
+            <option {{geo_is_selected country "Morocco"}} value="Morocco">Morocco</option>
+            <option {{geo_is_selected country "Monaco"}} value="Monaco">Monaco</option>
+            <option {{geo_is_selected country "Moldova"}} value="Moldova">Moldova</option>
+            <option {{geo_is_selected country "Montenegro"}} value="Montenegro">Montenegro</option>
+            <option {{geo_is_selected country "Saint Martin"}} value="Saint Martin">Saint Martin</option>
+            <option {{geo_is_selected country "Madagascar"}} value="Madagascar">Madagascar</option>
+            <option {{geo_is_selected country "Marshall Islands"}} value="Marshall Islands">Marshall Islands</option>
+            <option {{geo_is_selected country "Midway Islands"}} value="Midway Islands">Midway Islands</option>
+            <option {{geo_is_selected country "Macedonia"}} value="Macedonia">Macedonia</option>
+            <option {{geo_is_selected country "Mali"}} value="Mali">Mali</option>
+            <option {{geo_is_selected country "Myanmar [Burma]"}} value="Myanmar [Burma]">Myanmar [Burma]</option>
+            <option {{geo_is_selected country "Mongolia"}} value="Mongolia">Mongolia</option>
+            <option {{geo_is_selected country "Macau SAR China"}} value="Macau SAR China">Macau SAR China</option>
+            <option {{geo_is_selected country "Northern Mariana Islands"}} value="Northern Mariana Islands">Northern Mariana Islands</option>
+            <option {{geo_is_selected country "Martinique"}} value="Martinique">Martinique</option>
+            <option {{geo_is_selected country "Mauritania"}} value="Mauritania">Mauritania</option>
+            <option {{geo_is_selected country "Montserrat"}} value="Montserrat">Montserrat</option>
+            <option {{geo_is_selected country "Malta"}} value="Malta">Malta</option>
+            <option {{geo_is_selected country "Mauritius"}} value="Mauritius">Mauritius</option>
+            <option {{geo_is_selected country "Maldives"}} value="Maldives">Maldives</option>
+            <option {{geo_is_selected country "Malawi"}} value="Malawi">Malawi</option>
+            <option {{geo_is_selected country "Mexico"}} value="Mexico">Mexico</option>
+            <option {{geo_is_selected country "Malaysia"}} value="Malaysia">Malaysia</option>
+            <option {{geo_is_selected country "Mozambique"}} value="Mozambique">Mozambique</option>
+            <option {{geo_is_selected country "Namibia"}} value="Namibia">Namibia</option>
+            <option {{geo_is_selected country "New Caledonia"}} value="New Caledonia">New Caledonia</option>
+            <option {{geo_is_selected country "Niger"}} value="Niger">Niger</option>
+            <option {{geo_is_selected country "Norfolk Island"}} value="Norfolk Island">Norfolk Island</option>
+            <option {{geo_is_selected country "Nigeria"}} value="Nigeria">Nigeria</option>
+            <option {{geo_is_selected country "Nicaragua"}} value="Nicaragua">Nicaragua</option>
+            <option {{geo_is_selected country "Netherlands"}} value="Netherlands">Netherlands</option>
+            <option {{geo_is_selected country "Norway"}} value="Norway">Norway</option>
+            <option {{geo_is_selected country "Nepal"}} value="Nepal">Nepal</option>
+            <option {{geo_is_selected country "Dronning Maud Land"}} value="Dronning Maud Land">Dronning Maud Land</option>
+            <option {{geo_is_selected country "Nauru"}} value="Nauru">Nauru</option>
+            <option {{geo_is_selected country "Neutral Zone"}} value="Neutral Zone">Neutral Zone</option>
+            <option {{geo_is_selected country "Niue"}} value="Niue">Niue</option>
+            <option {{geo_is_selected country "New Zealand"}} value="New Zealand">New Zealand</option>
+            <option {{geo_is_selected country "Oman"}} value="Oman">Oman</option>
+            <option {{geo_is_selected country "Panama"}} value="Panama">Panama</option>
+            <option {{geo_is_selected country "Pacific Islands Trust Territory"}} value="Pacific Islands Trust Territory">Pacific Islands Trust Territory</option>
+            <option {{geo_is_selected country "Peru"}} value="Peru">Peru</option>
+            <option {{geo_is_selected country "French Polynesia"}} value="French Polynesia">French Polynesia</option>
+            <option {{geo_is_selected country "Papua New Guinea"}} value="Papua New Guinea">Papua New Guinea</option>
+            <option {{geo_is_selected country "Philippines"}} value="Philippines">Philippines</option>
+            <option {{geo_is_selected country "Pakistan"}} value="Pakistan">Pakistan</option>
+            <option {{geo_is_selected country "Poland"}} value="Poland">Poland</option>
+            <option {{geo_is_selected country "Saint Pierre and Miquelon"}} value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+            <option {{geo_is_selected country "Pitcairn Islands"}} value="Pitcairn Islands">Pitcairn Islands</option>
+            <option {{geo_is_selected country "Puerto Rico"}} value="Puerto Rico">Puerto Rico</option>
+            <option {{geo_is_selected country "Palestinian Territories"}} value="Palestinian Territories">Palestinian Territories</option>
+            <option {{geo_is_selected country "Portugal"}} value="Portugal">Portugal</option>
+            <option {{geo_is_selected country "U.S. Miscellaneous Pacific Islands"}} value="U.S. Miscellaneous Pacific Islands">U.S. Miscellaneous Pacific Islands</option>
+            <option {{geo_is_selected country "Palau"}} value="Palau">Palau</option>
+            <option {{geo_is_selected country "Paraguay"}} value="Paraguay">Paraguay</option>
+            <option {{geo_is_selected country "Panama Canal Zone"}} value="Panama Canal Zone">Panama Canal Zone</option>
+            <option {{geo_is_selected country "Qatar"}} value="Qatar">Qatar</option>
+            <option {{geo_is_selected country "Outlying Oceania"}} value="Outlying Oceania">Outlying Oceania</option>
+            <option {{geo_is_selected country "Réunion"}} value="Réunion">Réunion</option>
+            <option {{geo_is_selected country "Romania"}} value="Romania">Romania</option>
+            <option {{geo_is_selected country "Serbia"}} value="Serbia">Serbia</option>
+            <option {{geo_is_selected country "Russia"}} value="Russia">Russia</option>
+            <option {{geo_is_selected country "Rwanda"}} value="Rwanda">Rwanda</option>
+            <option {{geo_is_selected country "Saudi Arabia"}} value="Saudi Arabia">Saudi Arabia</option>
+            <option {{geo_is_selected country "Solomon Islands"}} value="Solomon Islands">Solomon Islands</option>
+            <option {{geo_is_selected country "Seychelles"}} value="Seychelles">Seychelles</option>
+            <option {{geo_is_selected country "Sudan"}} value="Sudan">Sudan</option>
+            <option {{geo_is_selected country "Sweden"}} value="Sweden">Sweden</option>
+            <option {{geo_is_selected country "Singapore"}} value="Singapore">Singapore</option>
+            <option {{geo_is_selected country "Saint Helena"}} value="Saint Helena">Saint Helena</option>
+            <option {{geo_is_selected country "Slovenia"}} value="Slovenia">Slovenia</option>
+            <option {{geo_is_selected country "Svalbard and Jan Mayen"}} value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+            <option {{geo_is_selected country "Slovakia"}} value="Slovakia">Slovakia</option>
+            <option {{geo_is_selected country "Sierra Leone"}} value="Sierra Leone">Sierra Leone</option>
+            <option {{geo_is_selected country "San Marino"}} value="San Marino">San Marino</option>
+            <option {{geo_is_selected country "Senegal"}} value="Senegal">Senegal</option>
+            <option {{geo_is_selected country "Somalia"}} value="Somalia">Somalia</option>
+            <option {{geo_is_selected country "Suriname"}} value="Suriname">Suriname</option>
+            <option {{geo_is_selected country "São Tomé and Príncipe"}} value="São Tomé and Príncipe">São Tomé and Príncipe</option>
+            <option {{geo_is_selected country "Union of Soviet Socialist Republics"}} value="Union of Soviet Socialist Republics">Union of Soviet Socialist Republics</option>
+            <option {{geo_is_selected country "El Salvador"}} value="El Salvador">El Salvador</option>
+            <option {{geo_is_selected country "Syria"}} value="Syria">Syria</option>
+            <option {{geo_is_selected country "Swaziland"}} value="Swaziland">Swaziland</option>
+            <option {{geo_is_selected country "Tristan da Cunha"}} value="Tristan da Cunha">Tristan da Cunha</option>
+            <option {{geo_is_selected country "Turks and Caicos Islands"}} value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+            <option {{geo_is_selected country "Chad"}} value="Chad">Chad</option>
+            <option {{geo_is_selected country "French Southern Territories"}} value="French Southern Territories">French Southern Territories</option>
+            <option {{geo_is_selected country "Togo"}} value="Togo">Togo</option>
+            <option {{geo_is_selected country "Thailand"}} value="Thailand">Thailand</option>
+            <option {{geo_is_selected country "Tajikistan"}} value="Tajikistan">Tajikistan</option>
+            <option {{geo_is_selected country "Tokelau"}} value="Tokelau">Tokelau</option>
+            <option {{geo_is_selected country "Timor-Leste"}} value="Timor-Leste">Timor-Leste</option>
+            <option {{geo_is_selected country "Turkmenistan"}} value="Turkmenistan">Turkmenistan</option>
+            <option {{geo_is_selected country "Tunisia"}} value="Tunisia">Tunisia</option>
+            <option {{geo_is_selected country "Tonga"}} value="Tonga">Tonga</option>
+            <option {{geo_is_selected country "Turkey"}} value="Turkey">Turkey</option>
+            <option {{geo_is_selected country "Trinidad and Tobago"}} value="Trinidad and Tobago">Trinidad and Tobago</option>
+            <option {{geo_is_selected country "Tuvalu"}} value="Tuvalu">Tuvalu</option>
+            <option {{geo_is_selected country "Taiwan"}} value="Taiwan">Taiwan</option>
+            <option {{geo_is_selected country "Tanzania"}} value="Tanzania">Tanzania</option>
+            <option {{geo_is_selected country "Ukraine"}} value="Ukraine">Ukraine</option>
+            <option {{geo_is_selected country "Uganda"}} value="Uganda">Uganda</option>
+            <option {{geo_is_selected country "U.S. Minor Outlying Islands"}} value="U.S. Minor Outlying Islands">U.S. Minor Outlying Islands</option>
+            <option {{geo_is_selected country "United States"}} value="United States">United States</option>
+            <option {{geo_is_selected country "Uruguay"}} value="Uruguay">Uruguay</option>
+            <option {{geo_is_selected country "Uzbekistan"}} value="Uzbekistan">Uzbekistan</option>
+            <option {{geo_is_selected country "Vatican City"}} value="Vatican City">Vatican City</option>
+            <option {{geo_is_selected country "Saint Vincent and the Grenadines"}} value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+            <option {{geo_is_selected country "North Vietnam"}} value="North Vietnam">North Vietnam</option>
+            <option {{geo_is_selected country "Venezuela"}} value="Venezuela">Venezuela</option>
+            <option {{geo_is_selected country "British Virgin Islands"}} value="British Virgin Islands">British Virgin Islands</option>
+            <option {{geo_is_selected country "U.S. Virgin Islands"}} value="U.S. Virgin Islands">U.S. Virgin Islands</option>
+            <option {{geo_is_selected country "Vietnam"}} value="Vietnam">Vietnam</option>
+            <option {{geo_is_selected country "Vanuatu"}} value="Vanuatu">Vanuatu</option>
+            <option {{geo_is_selected country "Wallis and Futuna"}} value="Wallis and Futuna">Wallis and Futuna</option>
+            <option {{geo_is_selected country "Wake Island"}} value="Wake Island">Wake Island</option>
+            <option {{geo_is_selected country "Samoa"}} value="Samoa">Samoa</option>
+            <option {{geo_is_selected country "People's Democratic Republic of Yemen"}} value="People's Democratic Republic of Yemen">People's Democratic Republic of Yemen</option>
+            <option {{geo_is_selected country "Yemen"}} value="Yemen">Yemen</option>
+            <option {{geo_is_selected country "Mayotte"}} value="Mayotte">Mayotte</option>
+            <option {{geo_is_selected country "South Africa"}} value="South Africa">South Africa</option>
+            <option {{geo_is_selected country "Zambia"}} value="Zambia">Zambia</option>
+            <option {{geo_is_selected country "Zimbabwe"}} value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label post-form-city">{{i18n "City"}}</label>
+          <div class="controls"><input id="city" type="text" value="{{city}}" /></div>
+        </div>
+        <div class="control-group">
+          <label class="control-label post-form-body">{{i18n "Body"}}</label>
+          <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge">{{body}}</textarea></div>
+        </div>
+        <div class="control-group">
+          <label class="control-label post-form-tags">{{i18n "Tags"}}</label>
+          <div class="controls"><input id="tags" type="text" value="{{tags}}" /></div>
+        </div>
+        {{#if categoriesEnabled}}
+        <div class="control-group post-form-category">
+          <label class="control-label">{{i18n "Categories"}}</label>
+          <div class="controls">
+            {{#each categories}}
+            <label class="radio inline">
+              <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" {{checked}} /> {{name}}
+            </label>
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+        {{#if isAdmin}}
+          <div class="control-group post-form-sticky">
+            <label class="control-label">{{i18n "Inactive?"}}</label>
+            <div class="controls">
+              {{inactive}}
+            </div>
+          </div>
+          <div class="control-group post-form-sticky">
+            <label class="control-label">{{i18n "Sticky?"}}</label>
+            <div class="controls">
+              <input type="checkbox" name="sticky" id="sticky" {{isSticky}} />
+            </div>
+          </div>
+          <div class="control-group post-form-user">
+            <label class="control-label">{{i18n "User"}}</label>
+            <div class="controls">
+              <select id="postUser">
+                {{#each users}}
+                  <option {{isSelected ..}} value="{{_id}}">{{userName}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+          <div class="control-group post-form-status">
+            <label class="control-label">{{i18n "Status"}}</label>
+            <div class="controls">
+              <label class="radio inline">
+                <input id="status_pending" type="radio" value="1" name="status" {{hasStatusPending}} /> {{i18n "Pending"}}
+              </label>
+              <label class="radio inline">
+                <input id="status_approved" type="radio" value="2" name="status" {{hasStatusApproved}} /> {{i18n "Approved"}}
+              </label>
+              <label class="radio inline">  
+                <input id="status_rejected" type="radio" value="3" name="status" {{hasStatusRejected}} /> {{i18n "Rejected"}}
+              </label>
+            </div>
+          </div>
+          <div id="postedAt" class={{showPostedAt}}>
+            <div class="control-group">
+              <label class="control-label post-form-date">{{i18n "Posted Date"}}</label>
+              <div class="controls"><input id="postedAtDate" type="text" value="{{postedAtDate}}" /></div>
+            </div>
+            <div class="control-group">
+              <label class="control-label post-form-time">{{i18n "Posted Time"}}</label>
+              <div class="controls"><input id="postedAtTime" type="text" value="{{postedAtTime}}" /></div>
+            </div>
+          </div>
+        {{/if}}
+        <div class="form-actions">
+          <a class="delete-link" href="/posts/deleted">{{i18n "Delete Post"}}</a>
+          <input type="submit" value="{{i18n "Submit"}}" />
+        </div>
+      </form>
+    {{/with}}
+  </div>
+</template>
